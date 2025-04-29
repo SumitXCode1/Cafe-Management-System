@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer's Cafe</title>
+    <link rel="stylesheet" href="cafe.css">
+</head>
+<body>
+
+<!-- Page 1: Welcome Page -->
+<div class="welcome-page">
+    <img src="cafe_image.jpg" alt="Cafe Image" class="background-image">
+    <div class="content">
+        <h1>Engineer's Cafe</h1>
+        <button class="continue-btn" onclick="goToMenuPage()">Continue</button>
+    </div>
+</div>
+
+<!-- Page 2: Menu and Order Page (Initially Hidden) -->
+<div class="order-page" id="orderPage" style="display: none;">
+    <div class="menu">
+        <h2>Menu</h2>
+
+        <!-- Menu Items -->
+        <div id="menu-items">
+            <div class="menu-item"><span>Masala Dosa - ₹60</span><button class="add-btn" onclick="addItem('Masala Dosa', 60)">Add</button></div>
+            <div class="menu-item"><span>Idli - ₹40</span><button class="add-btn" onclick="addItem('Idli', 40)">Add</button></div>
+            <div class="menu-item"><span>Pav Bhaji - ₹80</span><button class="add-btn" onclick="addItem('Pav Bhaji', 80)">Add</button></div>
+            <div class="menu-item"><span>Paneer Tikka - ₹120</span><button class="add-btn" onclick="addItem('Paneer Tikka', 120)">Add</button></div>
+            <div class="menu-item"><span>Butter Chicken - ₹200</span><button class="add-btn" onclick="addItem('Butter Chicken', 200)">Add</button></div>
+            <div class="menu-item"><span>Dal Tadka - ₹90</span><button class="add-btn" onclick="addItem('Dal Tadka', 90)">Add</button></div>
+            <div class="menu-item"><span>Veg Biryani - ₹150</span><button class="add-btn" onclick="addItem('Veg Biryani', 150)">Add</button></div>
+            <div class="menu-item"><span>Mango Lassi - ₹60</span><button class="add-btn" onclick="addItem('Mango Lassi', 60)">Add</button></div>
+            <div class="menu-item"><span>Cold Coffee - ₹80</span><button class="add-btn" onclick="addItem('Cold Coffee', 80)">Add</button></div>
+            <div class="menu-item"><span>Chai - ₹30</span><button class="add-btn" onclick="addItem('Chai', 30)">Add</button></div>
+            <div class="menu-item"><span>Chicken 65 - ₹140</span><button class="add-btn" onclick="addItem('Chicken 65', 140)">Add</button></div>
+            <div class="menu-item"><span>Fish Curry - ₹220</span><button class="add-btn" onclick="addItem('Fish Curry', 220)">Add</button></div>
+            <div class="menu-item"><span>Garlic Naan - ₹50</span><button class="add-btn" onclick="addItem('Garlic Naan', 50)">Add</button></div>
+            <div class="menu-item"><span>Hot Chocolate - ₹70</span><button class="add-btn" onclick="addItem('Hot Chocolate', 70)">Add</button></div>
+            <div class="menu-item"><span>Brownie - ₹100</span><button class="add-btn" onclick="addItem('Brownie', 100)">Add</button></div>
+            <div class="menu-item"><span>Gulab Jamun - ₹60</span><button class="add-btn" onclick="addItem('Gulab Jamun', 60)">Add</button></div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="addNewItem()">Add Menu Food Item</button>
+        </div>
+    </div>
+
+    <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="orderList"></div>
+        <div class="bill">
+            <p><strong>Subtotal: ₹<span id="subtotal">0</span></strong></p>
+            <p>Tax (5%): ₹<span id="tax">0</span></p>
+            <p>GST (5%): ₹<span id="gst">0</span></p>
+            <p>Total: ₹<span id="total">0</span></p>
+        </div>
+
+        <div class="payment-method">
+            <label for="offline" class="payment-option">
+                <input type="radio" id="offline" name="payment" value="offline"> Offline Payment
+            </label>
+            <label for="online" class="payment-option">
+                <input type="radio" id="online" name="payment" value="online"> Online Payment
+            </label>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn" onclick="viewOrders()">View Orders</button>
+            <button class="continue-btn" onclick="processPayment()">Continue</button>
+        </div>
+    </div>
+
+    <!-- QR Code for online payment -->
+    <div id="qrCode" class="qr-code" style="display: none;">
+        <img src="qr.png" alt="QR Code">
+    </div>
+</div>
+
+<script src="cafe.js"></script>
+</body>
+</html>
